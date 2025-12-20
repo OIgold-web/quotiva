@@ -1,0 +1,20 @@
+.contactbtn{
+  display: flex;
+}
+.contactbtn button{
+  outline: none;
+  border: none;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: deepskyblue;
+  margin-right: 10px;
+  border-radius: 8px;
+}
+a{
+  color: white;
+  text-decoration: none;
+}
+.contactbtn button a i{
+    width: 50px;
+}
