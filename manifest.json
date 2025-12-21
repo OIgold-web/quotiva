@@ -9,23 +9,23 @@
   "screenshots": [
     {
       "src": "https://oigold-web.github.io/quotiva/sc1.png",
-      "type": "image"
+      "type": "image/png"
     },
     {
       "src": "https://oigold-web.github.io/quotiva/sc2.png",
-      "type": "image"
+      "type": "image/png"
     }
   ],
   "icons": [
     {
       "src": "https://oigold-web.github.io/quotiva/logo1.png",
       "sizes": "192x192",
-      "type": "png"
+      "type": "image/png"
     },
     {
       "src": "https://oigold-web.github.io/quotiva/logo2.png",
       "sizes": "512x512",
-      "type": "png"
+      "type": "image/png"
     }
   ],
   "id": "mastad001",
