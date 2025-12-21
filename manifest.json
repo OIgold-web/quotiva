@@ -9,10 +9,12 @@
   "screenshots": [
     {
       "src": "https://oigold-web.github.io/quotiva/sc1.png",
+      "sizes": "600x1024",
       "type": "image/png"
     },
     {
       "src": "https://oigold-web.github.io/quotiva/sc2.png",
+      "sizes": "600x1024",
       "type": "image/png"
     }
   ],
