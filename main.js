@@ -13,7 +13,7 @@ async function fetchImg(){
     if(searchBox.value == ''){
       keyword = "quotes";
     }else{
-      keyword = searchBox.value + "quotes";
+      keyword = searchBox.value;
     }
     const res = await fetch(`https://api.unsplash.com/search/photos?query=${keyword}&client_id=RrqyvCmMDZjnSaL8EOIqEmli-IeXfQ1UiN8ot2_psDI&page=${page}&per_page=10`);
     
