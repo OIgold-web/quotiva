@@ -6,6 +6,16 @@
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
+  "screenshots": [
+    {
+      "src": "https://oigold-web.github.io/quotiva/sc1.png",
+      "type": "image"
+    },
+    {
+      "src": "https://oigold-web.github.io/quotiva/sc2.png",
+      "type": "image"
+    }
+  ],
   "icons": [
     {
       "src": "https://oigold-web.github.io/quotiva/logo1.png",
