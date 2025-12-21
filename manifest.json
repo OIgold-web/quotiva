@@ -3,7 +3,7 @@
   "short_name": "Quotiva",
   "description": "Platform that provides free images with quotes.",
   "start_url": "https://oigold-web.github.io/quotiva/index.html",
-  "display": "standalone",
+  "display": "fullscreen",
   "background_color": "#ffffff",
   "theme_color": "#000000",
   "screenshots": [
