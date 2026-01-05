@@ -178,13 +178,13 @@ img{
   position: fixed;
   top: 0;
   left: 0;
-  height: 7rem;
+  height: 10rem;
   width: 100%;
   z-index: var(--z-fixed);
   transition: var(--tran-0-5);
 }
 .header-active{
-  height: 6rem;
+  height: 7rem;
   background-color: var(--white-color);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
@@ -192,7 +192,7 @@ img{
 /* nav */
 .nav{
   position: relative;
-  height: 100%;
+  margin-top: 1%;
   align-items: center;
   justify-content: space-between;
 }
