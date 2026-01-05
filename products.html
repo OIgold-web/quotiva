@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>quotiva|products</title>
+    <meta name="description" content="Quotes app providing thousands of quotes, love,life,study, success, faith quotes">
+    <meta property="og:title" content="QuotesApp">
+    <meta property="og:description" content="Enjoy thousands of free quotes that you can save, copy and share with others.">
+    <title>quotesapp|quotes</title>
 
     <!-- Swiper JS CSS-->
     <link rel="stylesheet" href="swiper-bundle.min.css">
@@ -19,27 +21,20 @@
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="products.css">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-V5FD94BETF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-V5FD94BETF');
-    </script>
 </head>
 <body>
 <!-- Header -->
-    <header class="header" style="background: white; color: black;">
+    <header class="header">
             <nav class="nav container flex">
                     <a href="#" class="logo-content flex">
                         <i><img class="mt" src="logo.png" alt=""></i>
                     </a>
                     <form id="search-form">
-                      <input type="text" placeholder="funny,inspirational..." id="search-box">
+                      <input type="text" placeholder="Search Images..." id="search-box">
                       <button id="search-btn">search</button>
                     </form>
+                    
                     <div class="menu-content">
                             <ul class="menu-list flex">
                                     <li><a href="index.html" class="nav-link" style="color: black;">Home</a></li>
@@ -47,21 +42,23 @@
                                    <!-- <li><a href="contact.html" class="nav-link" style="color: black;">Contacts</a></a></li>-->
                                     <li><a href="about.html" class="nav-link" style="color: black;">About Us</a></li>
                             </ul>
-
                            <!-- <div class="media-icons flex">
                                     <a href="https://www.facebook.com"><i class='bx bxl-facebook'></i></a>
                                     <a href="https://twitter.com/i/flow/login"><i class='bx bxl-twitter' ></i></a>
                                     <a href="https://www.instagram.com/accounts/login"><i class='bx bxl-instagram-alt' ></i></a>
                             </div>-->
-
                             <i class='bx bx-x navClose-btn' style="color: black;"></i>
                         </div>
-                        
-                        
-
                         <i class='bx bx-menu navOpen-btn'style="color: black;"></i>
+                        <div class="category flex">
+                          <div id="foryou" class="foryou active-category">foryou</div>
+                          <div id="success" class="success">success</div>
+                          <div id="life" class="life">life</div>
+                          <div id="faith" class="faith">faith</div>
+                          <div id="love" class="love">love</div>
+                          <div id="study" class="study">study</div>
+                        </div>
                 </nav>
-        
     </header>
 
 <!-- Home Section -->
@@ -69,7 +66,7 @@
     <div class="buttons">
       <button class="b2">Close</button>
     </div>
-    <i id="donate" class="bx bx-heart heart-icon" style="font-size: 28px; margin-left: 89%; margin-top:50%; background: orange;width: 40px;height: 40px;padding: 2px; padding-top:5px; text-align: center;"></i>
+    <div id="donate">♥️</div>
     <div class="more">
       <button id="more-btn">more</button>
     </div>
@@ -81,6 +78,38 @@
                 <i class='bx bx-up-arrow-alt scrollUp-icon'></i>
         </a> 
 </main>
+<div class="overlay" id="overlay">
+  <div class="rules">
+    <h3>Daily Quotes</h3>
+    <h2 id="homeQuote" id="quoteTag">Everybody wants success until it's time to pay the price</h2>
+    <p id="quoteAuthor">--by gold</p>
+    <br><br>
+    <button class="quoteBtn" onclick="explore()">close</button><button class="quoteBtn" onclick="copyQuote()">copy quote</button>
+  </div>
+</div>
+<script>
+  //------------daily quote------------
+  const quoteTag = document.getElementById('quoteTag');
+  const quoteAuthor = document.getElementById('quoteAuthor');
+  const quotelink = 'https://api.quotify.top/random?quantity=1'
+  async function getquote() {
+    const outPut = await fetch(quotelink);
+    var outputData = outPut.json();
+  
+    quoteTag.innerHTML = outputData.text + ' [https://oigold.github.io/quotiva]';
+    quoteAuthor.innerHTML = '--' + outputData.author;
+  }
+  getquote();
+  
+  function explore() {
+    document.getElementById("overlay").style.display = "none";
+  }
+  
+  function copyQuote() {
+    const homeQuote = document.getElementById("homeQuote").textContent;
+    if (homeQuote) navigator.clipboard.writeText(homeQuote);
+  }
+</script>
         <script src="main.js"></script>
 <!-- Swiper JS -->
 <script src="swiper-bundle.min.js"></script>
@@ -91,7 +120,4 @@
 <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
-
 </html>
-
-

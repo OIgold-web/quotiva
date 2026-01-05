@@ -4,14 +4,45 @@ const searchBox = document.getElementById('search-box');
 const searchBtn = document.getElementById('search-btn');
 const moreBtn = document.getElementById('more-btn');
 const donate = document.getElementById('donate');
+//--------refrences------
+  const foryou = document.getElementById('foryou');
+  const success = document.getElementById('success');
+  const life = document.getElementById('life');
+  const faith = document.getElementById('faith');
+  const love = document.getElementById('love');
+  const study = document.getElementById('study');
+  
 
+
+//------------image quotes-----------------
 let keyword = '';
 let page = 1;
 
 async function fetchImg(){
   try{
     if(searchBox.value == ''){
-      keyword = "quotes";
+      if(keyword == ''){
+         keyword = "quotes";
+      }else{
+        foryou.addEventListener('click', () => {
+          keyword = 'quotes';
+        })
+        success.addEventListener('click', () => {
+          keyword = 'Successquotes';
+        })
+        life.addEventListener('click', () => {
+          keyword = 'lifequotes';
+        })
+        faith.addEventListener('click', () => {
+          keyword = 'faithquotes';
+        })
+        love.addEventListener('click', () => {
+          keyword = 'lovequotes';
+        })
+        study.addEventListener('click', () => {
+          keyword = 'studyquotes';
+        })
+      }
     }else{
       keyword = searchBox.value + "quotes";
     }
@@ -91,9 +122,83 @@ searchForm.addEventListener('submit',(e) => {
   e.preventDefault();
   page = 1;
   fetchImg();
+  foryou.classList.add('active-category');
+   success.classList.remove('active-category');
+   life.classList.remove('active-category');
+   faith.classList.remove('active-category');
+   love.classList.remove('active-category');
+   study.classList.remove('active-category');
 })
 if(searchBox.value == ''){
-  fetchImg();
+
+ //-------events---------
+ foryou.addEventListener('click', (e)=>{
+   foryou.classList.add('active-category');
+   success.classList.remove('active-category');
+   life.classList.remove('active-category');
+   faith.classList.remove('active-category');
+   love.classList.remove('active-category');
+   study.classList.remove('active-category');
+   e.preventDefault();
+  page = 1;
+   fetchImg();
+ })
+ success.addEventListener('click', (e)=>{
+   foryou.classList.remove('active-category');
+   success.classList.add('active-category');
+   life.classList.remove('active-category');
+   faith.classList.remove('active-category');
+   love.classList.remove('active-category');
+   study.classList.remove('active-category');
+   e.preventDefault();
+   page = 1;
+   fetchImg();
+ })
+ life.addEventListener('click', (e) => {
+   foryou.classList.remove('active-category');
+   success.classList.remove('active-category');
+   life.classList.add('active-category');
+   faith.classList.remove('active-category');
+   love.classList.remove('active-category');
+   study.classList.remove('active-category');
+   e.preventDefault();
+   page = 1;
+   fetchImg();
+ })
+ faith.addEventListener('click', (e) => {
+   foryou.classList.remove('active-category');
+   success.classList.remove('active-category');
+   life.classList.remove('active-category');
+   faith.classList.add('active-category');
+   love.classList.remove('active-category');
+   study.classList.remove('active-category');
+   e.preventDefault();
+   page = 1;
+   fetchImg();
+ })
+ love.addEventListener('click', (e) => {
+   foryou.classList.remove('active-category');
+   success.classList.remove('active-category');
+   life.classList.remove('active-category');
+   faith.classList.remove('active-category');
+   love.classList.add('active-category');
+   study.classList.remove('active-category');
+   e.preventDefault();
+   page = 1;
+   fetchImg();
+ })
+ study.addEventListener('click', (e) => {
+   foryou.classList.remove('active-category');
+   success.classList.remove('active-category');
+   life.classList.remove('active-category');
+   faith.classList.remove('active-category');
+   love.classList.remove('active-category');
+   study.classList.add('active-category');
+   e.preventDefault();
+   page = 1;
+   fetchImg();
+ })
+ fetchImg();
 }
 
 moreBtn.addEventListener('click', () => {
@@ -104,4 +209,6 @@ moreBtn.addEventListener('click', () => {
 donate.addEventListener('click', ()=>{
   window.open('https://ko-fi.com/quotiva')
 })
+//https://ab6123e4.mobsted.com/pwa/?appid=15
+//<img src='https://ab6123e4-admin.mobsted.com/api/v8/qr/imagehex?text=https://ab6123e4.mobsted.com/pwa/?appid=15' />
 

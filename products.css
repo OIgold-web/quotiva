@@ -135,7 +135,7 @@ form{
   border-radius: 1.5em;
 }
 #search-box{
-  width: 65%;
+  width: 75%;
   padding: 5px;
   font-size: 13px;
   border: 3px solid orange;
@@ -158,5 +158,93 @@ form{
 @media screen and (min-width: 1024px){
   #search-box{
     width: 90%;
+  }
+}
+.overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.8);
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  z-index:100;
+}
+.rules{
+  max-width:70%;
+  color: white;
+}
+.rules h3{
+  color: orange;
+}
+.rules h2{
+  font-family: cursive;
+}
+.rules p{
+  color: green;
+}
+.quoteBtn{
+  color: white;
+  padding:10px 20px;
+  font-size:16px;
+  background: orange;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+  margin:4px;
+}
+#donate{
+  position: fixed; 
+  font-size: 18px; 
+  right: 7%; 
+  bottom: 15%; 
+  background: orange;
+  padding: 7px; 
+  text-align: center;
+  border-radius: 50%;
+}
+.category{
+  position: absolute;
+  z-index: 99;
+  margin-top: 18%;
+  margin-left: 5%;
+  width: 90%;
+  justify-content: space-between;
+}
+.active-category{
+  border-bottom: 3px solid orange;
+  padding-left: 4px;
+  padding-right: 4px;
+  color: orange;
+  font-weight: 700;
+}
+.header{
+    height: 13rem;
+  }
+  .header-active{
+    height: 10rem;
+  }
+@media screen and (min-width: 768px){
+  .category{
+    margin-top: 15%;
+    width: 80%;
+  }
+  .header{
+    height: 15rem;
+  }
+  .header-active{
+    height: 12rem;
+  }
+}
+@media screen and (min-width: 1024px){
+  .category{
+    margin-top: 12%;
+    width: 60%;
+  }
+  .header{
+    height: 17rem;
+  }
+  .header-active{
+    height: 14rem;
   }
 }
